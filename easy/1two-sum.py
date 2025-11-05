@@ -4,13 +4,12 @@ import unittest
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
        map = {}
-       idx = 0
-       for n in nums:
+       for i in range(len(nums)):
+           n = nums[i]
            want = target - n
            if want in map:
-               return [idx,map[want]]
-           map[n] = idx 
-           idx+=1
+               return [i,map[want]]
+           map[n] = i 
 
 class TestSolution(unittest.TestCase):
     def setUp(self):
