@@ -14,7 +14,7 @@ class Solution:
             mid = (high + low) // 2
             bad = self.isBadVersion(mid)
             if bad:
-                high = mid
+                high = mid # keep the mid as high, so we can use "while low < high" instead of "while low <= high"
             else:
                 low = mid + 1
         return low

@@ -13,7 +13,7 @@ class Solution:
             if temp == target:
                 return mid
             elif temp > target:
-                high = mid - 1
+                high = mid - 1 # ignore the mid, so we must use "while low <= high" instead of "while low < high"
             else:
                 low = mid + 1
             
