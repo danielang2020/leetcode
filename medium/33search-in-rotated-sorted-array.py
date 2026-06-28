@@ -12,8 +12,8 @@ class Solution:
             
             if temp == target:
                 return mid
-            elif nums[low] < temp:
-                if nums[low] <= target < temp:
+            elif nums[low] < temp: # first check left if it's sorted
+                if nums[low] <= target < temp: # then check as usual in sorted range
                     high = mid - 1
                 else:
                     low = mid + 1
