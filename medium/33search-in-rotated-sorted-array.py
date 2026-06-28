@@ -12,16 +12,16 @@ class Solution:
             
             if temp == target:
                 return mid
-            elif nums[low] < temp: # first check left if it's sorted
+            elif nums[low] <= temp: # first check left if it's sorted (including single element)
                 if nums[low] <= target < temp: # then check as usual in sorted range
                     high = mid - 1
                 else:
-                    low = mid + 1
-            else:
-                if temp < target <= nums[high]:
+                    low = mid + 1 # next go to unsorted part
+            else: # first check right if it's sorted
+                if temp < target <= nums[high]: # then check as usual in sorted range
                     low = mid + 1
                 else:
-                    high = mid - 1
+                    high = mid - 1 # next go to unsorted part
                     
         return -1
                     
